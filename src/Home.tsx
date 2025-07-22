@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Kits from './Kits';
+import ParticleSystem from './components/ParticleSystem';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Home: React.FC = () => {
       <Header />
       <main>
         <HeroSection />
+        <ParticleSystem />
         <Kits />
       </main>
     </div>

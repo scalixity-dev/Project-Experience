@@ -6,6 +6,9 @@ export default {
       colors: {
         beige: '#FFF7E6',
       },
+      fontFamily: {
+        lato: ['Lato', 'Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],

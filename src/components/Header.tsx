@@ -18,9 +18,9 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-sm' 
+          ? 'glass shadow-lg border-b border-white/20' 
           : 'bg-transparent'
       }`}
     >
@@ -28,8 +28,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0 animate-fade-in">
-            <h1 className="text-2xl lg:text-3xl font-bold text-violet-500">
-              EduFlex<span className="text-violet-400">.</span>
+            <h1 className="text-2xl lg:text-3xl font-black text-gray-900 tracking-tight">
+              EduFlex<span className="text-gradient">.</span>
             </h1>
           </div>
 
@@ -44,10 +44,9 @@ const Header = () => {
                 >
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-gray-600 hover:text-violet-600 font-medium transition-all duration-300 hover:scale-105 relative group"
+                    className="text-gray-900 hover:text-[#AC8E60] font-medium text-sm tracking-wide transition-all duration-300 hover:scale-105 link-hover uppercase"
                   >
                     {item}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-violet-500 transition-all duration-300 group-hover:w-full"></span>
                   </a>
                 </li>
               ))}
@@ -56,14 +55,14 @@ const Header = () => {
 
           {/* Contact Button & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <button className="hidden lg:block border-2 border-gray-300 text-gray-700 px-6 py-2 rounded-full font-medium hover:border-violet-500 hover:text-violet-600 transition-all duration-300 hover:scale-105 hover:shadow-md animate-fade-in">
+            <button className="hidden lg:block bg-gray-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-[#AC8E60] transition-all duration-300 magnetic-btn ripple-button shadow-lg hover:shadow-xl">
               Contact
             </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-md text-gray-600 hover:text-violet-600 hover:bg-gray-100 transition-colors duration-300"
+              className="lg:hidden p-3 rounded-xl text-gray-900 hover:text-[#AC8E60] hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -72,22 +71,23 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         <div 
-          className={`lg:hidden transition-all duration-300 overflow-hidden ${
-            isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+          className={`lg:hidden transition-all duration-500 ease-out overflow-hidden ${
+            isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-4 space-y-3">
+          <div className="py-6 space-y-4 glass rounded-2xl mx-4 mb-4 px-6">
             {navItems.map((item, index) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block px-4 py-2 text-gray-600 hover:text-violet-600 hover:bg-violet-50 rounded-lg font-medium transition-all duration-300"
+                className="block py-3 text-gray-900 hover:text-[#AC8E60] rounded-lg font-medium transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMobileMenuOpen(false)}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item}
               </a>
             ))}
-            <button className="w-full mt-4 border-2 border-gray-300 text-gray-700 px-6 py-2 rounded-full font-medium hover:border-violet-500 hover:text-violet-600 transition-all duration-300">
+            <button className="w-full mt-6 bg-gradient-to-r from-[#AC8E60] to-[#B59F84] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg">
               Contact
             </button>
           </div>
