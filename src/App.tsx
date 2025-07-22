@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
-import StatsSection from './components/StatsSection';
+
 
 function App() {
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
       <Header />
       <main>
         <HeroSection />
-        <StatsSection />
+     
       </main>
     </div>
   );
