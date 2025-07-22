@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import Kits from './Kits';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -21,12 +22,13 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div className="bg-beige min-h-screen">
       <Header />
       <main>
         <HeroSection />
+        <Kits />
       </main>
-    </>
+    </div>
   );
 };
 
