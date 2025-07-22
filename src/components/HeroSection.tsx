@@ -24,7 +24,9 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="py-40 bg-gradient-to-br from-slate-50 to-white overflow-hidden">
+
+    <section ref={heroRef} className="py-40  bg-beige-500   from-slate-50 to-white overflow-hidden">
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
@@ -67,52 +69,64 @@ const HeroSection = () => {
             </div>
 
             {/* Main Image Grid */}
-            <div className="grid grid-cols-2 gap-4 lg:gap-6">
-              
-              {/* Top Left - Blue Card */}
-              <div className="relative group">
-                <div className="bg-sky-300 rounded-3xl p-4 lg:p-6 transform hover:scale-105 transition-all duration-500">
-                  <img 
-                    src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Student with tablet"
-                    className="w-full h-48 lg:h-56 object-cover rounded-2xl"
-                  />
-                </div>
-                {/* Arrow Icon */}
-                <div className="absolute -top-2 -right-2 bg-sky-200 rounded-full p-3 animate-bounce-slow">
-                  <div className="w-6 h-6 border-r-2 border-b-2 border-white transform rotate-45"></div>
-                </div>
-              </div>
-
-              {/* Top Right - Purple Card */}
-              <div className="bg-violet-400 rounded-3xl p-4 lg:p-6 transform hover:scale-105 transition-all duration-500 translate-y-8">
-                <img 
-                  src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=400"
-                  alt="Student with books"
-                  className="w-full h-48 lg:h-56 object-cover rounded-2xl"
+            <div className="relative grid grid-cols-2 grid-rows-2 gap-4 w-[340px] h-[340px] mx-auto">
+              {/* Top Left Image */}
+              <div className="rounded-3xl overflow-hidden bg-blue-100 flex items-center justify-center">
+                <img
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&q=80"
+                  alt="Person 1"
+                  className="object-cover w-full h-full"
                 />
               </div>
-
-              {/* Bottom Left - Green Card */}
-              <div className="bg-green-300 rounded-3xl p-4 lg:p-6 transform hover:scale-105 transition-all duration-500 -translate-y-4">
-                <img 
-                  src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=400"
-                  alt="Happy student"
-                  className="w-full h-40 lg:h-48 object-cover rounded-2xl"
+              {/* Top Right Image */}
+              <div className="rounded-3xl overflow-hidden bg-purple-100 flex items-center justify-center">
+                <img
+                  src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=400&q=80"
+                  alt="Person 2"
+                  className="object-cover w-full h-full"
                 />
               </div>
+              {/* Bottom Left Image */}
+              <div className="rounded-3xl overflow-hidden bg-green-100 flex items-center justify-center">
+                <img
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=400&q=80"
+                  alt="Person 3"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              {/* Bottom Right Empty */}
+              <div></div>
 
-              {/* Bottom Right - Purple Oval with Rings */}
-              <div className="bg-violet-300 rounded-3xl p-4 lg:p-6 flex items-center justify-center transform hover:scale-105 transition-all duration-500">
-                <div className="flex space-x-2">
-                  {[...Array(3)].map((_, i) => (
-                    <div 
-                      key={i}
-                      className="w-8 h-8 lg:w-10 lg:h-10 border-4 border-white rounded-full animate-pulse"
-                      style={{ animationDelay: `${i * 0.2}s` }}
-                    ></div>
-                  ))}
+              {/* Central Pill with Rings */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div className="bg-purple-200 rounded-full px-6 py-2 flex items-center justify-center shadow-md">
+                  <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
+                    <ellipse cx="12" cy="12" rx="10" ry="10" stroke="#A78BFA" strokeWidth="2"/>
+                    <ellipse cx="24" cy="12" rx="10" ry="10" stroke="#A78BFA" strokeWidth="2"/>
+                    <ellipse cx="36" cy="12" rx="10" ry="10" stroke="#A78BFA" strokeWidth="2"/>
+                    <ellipse cx="48" cy="12" rx="10" ry="10" stroke="#A78BFA" strokeWidth="2"/>
+                  </svg>
                 </div>
+              </div>
+
+              {/* Decorative Dots and Stars */}
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                {/* Bird Icon */}
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <circle cx="18" cy="18" r="18" fill="#BAE6FD"/>
+                  <path d="M12 20c2-4 8-4 10 0" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <div className="absolute -left-8 top-1/3">
+                <div className="w-4 h-4 bg-green-200 rounded-full"></div>
+              </div>
+              <div className="absolute right-0 bottom-0">
+                <div className="w-5 h-5 bg-blue-200 rounded-full"></div>
+              </div>
+              <div className="absolute left-1/4 bottom-0">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <polygon points="10,2 12,8 18,8 13,12 15,18 10,14 5,18 7,12 2,8 8,8" fill="#A7F3D0"/>
+                </svg>
               </div>
             </div>
           </div>

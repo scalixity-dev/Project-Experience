@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Home from './Home';
-
 function App() {
   useEffect(() => {
     // Trigger animations when elements come into view
