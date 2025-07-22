@@ -24,7 +24,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="pt-20 lg:pt-24 pb-16 lg:pb-20 bg-gradient-to-br from-slate-50 to-white overflow-hidden">
+    <section ref={heroRef} className="py-40 bg-gradient-to-br from-slate-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
